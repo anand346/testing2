@@ -1,0 +1,65 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Automate Git",
+            "type": "shell",
+            "command": "devauto --source ${input:getSourceDestination} --branch ${input:getBranchName} --email ${input:getUserEmail} --username ${input:getUserName}",
+            "windows": {
+                "command": "devauto --source ${input:getSourceDestination} --branch ${input:getBranchName} --email ${input:getUserEmail} --username ${input:getUserName}"
+            },
+            "group": "none",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+            }
+        }
+        // {
+        //     "label": "Start Test",
+        //     "type": "shell",
+        //     "command": "npm run test",
+        //     "windows": {
+        //         "command": "npm run test"
+        //     },
+        //     "group": "none",
+        //     "presentation": {
+        //         "reveal": "always",
+        //         "panel": "new"
+        //     },
+        //     "runOptions": {
+        //         "runOn": "folderOpen",
+        //     }
+        // }
+    ],
+    "inputs" : [
+        {
+            "id" : "getSourceDestination",
+            "description" : "Type your repository url",
+            "default": "none",
+            "type" : "promptString"
+        },
+        {
+            "id" : "getBranchName",
+            "description" : "Type your branch name",
+            "default": "none",
+            "type" : "promptString"
+        },
+        {
+            "id" : "getUserName",
+            "description" : "Type your git username",
+            "default": "none",
+            "type" : "promptString"
+        },
+        {
+            "id" : "getUserEmail",
+            "description" : "Type your git email address",
+            "default": "none",
+            "type" : "promptString"
+        },
+    ]
+}
+
